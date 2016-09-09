@@ -824,3 +824,8 @@ blockquote {
 .wsite-button-large.wsite-button-highlight .wsite-button-inner {
 	background-image: url(button_large_highlight.png);
 }
+
+body, html {
+  cursor: url(cur222.cur), pointer;
+  height: 100%;
+}
