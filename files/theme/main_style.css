@@ -829,3 +829,7 @@ body, html {
   cursor: url(cur222.cur), pointer;
   height: 100%;
 }
+
+#keys {
+  font: italic 20pt Arial;
+}
