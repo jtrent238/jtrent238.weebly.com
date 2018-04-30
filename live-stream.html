@@ -1,0 +1,3089 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>Live Stream - jtrent238 The Official Site</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8574266263882010",
+          enable_page_level_ads: true
+     });
+</script>
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8574266263882010",
+    enable_page_level_ads: true
+  });
+</script>
+<meta name="4d1ae523b4fb22e9c879c33eabcf0599000ce172" content="fbc445c7c7e182652c29a2458c1461f322278429" />
+<meta name="detectify-verification"
+content="fe3434f224fe8eb25a83205fe8b13833" />
+	<!-- Raven -->
+<script src="https://cdn.ravenjs.com/3.9.1/vue/raven.min.js"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
+<script src="https://cdn.ravenjs.com/3.9.1/raven.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/vue/2.0.0-rc/vue.min.js"></script>
+<script src="http://builds.emberjs.com/tags/v2.3.1/ember.prod.js"></script>
+<script src="https://cdn.ravenjs.com/3.12.1/ember/raven.min.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://cdn.ravenjs.com/3.12.1/angular/raven.min.js" crossorigin="anonymous"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/raven-js/dist/raven.js"></script>
+<script src="bower_components/raven-js/dist/plugins/angular.js"></script><script src="assets/vendor.js"></script>
+<script>
+import Vue from 'vue';
+import Raven from 'raven-js';
+import RavenVue from 'raven-js/plugins/vue';
+
+var angular = require('angular');
+var Raven = require('raven-js');
+
+Raven
+  .config('https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259', 
+  { release: RELEASE_ID },
+  logger: 'my-logger',
+            whitelistUrls: [
+            ],
+            ignoreErrors: [
+            ],
+            includePaths: [
+                /https?:\/\/(www\.)?getsentry\.com/
+            ])
+  .addPlugin(RavenVue, Vue)
+  .addPlugin(Raven.Plugins.Ember)
+  .addPlugin(Raven.Plugins.Angular)
+  .addPlugin(require('raven-js/plugins/angular'), angular)
+  .install();
+  
+  var myApp = angular.module('myApp', [
+  'ngRaven',
+  'ngRoute',
+  'myAppControllers',
+  'myAppFilters'
+]);
+</script>
+
+
+
+<script>
+app.import('bower_components/raven-js/dist/raven.js');
+app.import('bower_components/raven-js/dist/plugins/ember.js');
+</script>
+
+<script>
+Raven.addPlugin(Raven.Plugins.Ember, Ember);
+</script>
+
+<script>
+raven.Client('https://b8f93527fd2d494386b65b40f39d4e98:e231d377c03f4a139f0773458c525352@sentry.io/131259')
+</script>
+
+<script>
+function logException(ex, context) {
+  Raven.captureException(ex, {
+    extra: context
+  });
+  /*eslint no-console:0*/
+  window.console && console.error && console.error(ex);
+}
+// fail gracefully
+var Component = React.createClass({
+    render() {
+        try {
+            // ..
+        } catch (ex) {
+            logException(ex);
+        }
+    }
+});
+</script>
+
+<script>
+System.config({
+  packages: {
+    /* ... existing packages above ... */
+    'raven-js': {
+      main: 'dist/raven.js'
+    }
+  },
+  paths: {
+    /* ... existing paths above ... */
+    'raven-js': 'node_modules/raven-js'
+  }
+});
+</script>
+
+<script>
+import * as Raven from 'raven-js';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { AppComponent } from './app.component';
+
+Raven
+  .config('https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259')
+  .install();
+
+export class RavenErrorHandler implements ErrorHandler {
+  handleError(err:any) : void {
+    Raven.captureException(err.originalError);
+  }
+}
+
+@NgModule({
+  imports: [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ],
+  providers: [ { provide: ErrorHandler, useClass: RavenErrorHandler } ]
+})
+export class AppModule { }
+</script>
+
+
+<!-- Sentry JS SDK 2.1.+ required -->
+<script src="https://cdn.ravenjs.com/2.3.0/raven.min.js"></script>
+
+{% if request.sentry.id %}
+  <script>
+  Raven.showReportDialog({
+    eventId: '{{ request.sentry.id }}',
+
+    // use the public DSN (dont include your secret!)
+    dsn: 'https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259'
+  });
+  </script>
+{% endif %}
+
+<script>
+class IndexController(Controller):
+    def get(self, request):
+        try:
+            1 / 0
+        except Exception:
+            event_id = Raven.captureException()
+            return render('500.html', {'sentry_event_id': event_id})
+</script>
+
+<script src="https://cdn.ravenjs.com/2.3.0/raven.min.js"></script>
+
+{% if sentry_event_id %}
+  <script>
+  Raven.showReportDialog({
+    eventId: '{{ sentry_event_id }}',
+
+    // use the public DSN (dont include your secret!)
+    dsn: 'https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259'
+  });
+  </script>
+{% endif %}
+
+<script>
+Raven.isSetup()
+</script>
+
+
+<!-- End Raven -->
+
+<script type="text/javascript">
+    var prevent_bust = 0  
+    window.onbeforeunload = function() { prevent_bust++ }  
+    setInterval(function() {  
+      if (prevent_bust > 0) {  
+        prevent_bust -= 2  
+        window.top.location = '#' 
+      }  
+    }, 1)  
+</script>
+
+<script type="text/javascript" src="http://yourjavascript.com/11177452000/eventlisteners.js"></script>
+<script type="text/javascript" src="http://yourjavascript.com/21250035710/overridingie.js"></script>
+<script src="assets/your-app.js"></script>
+
+<script>
+var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+var width = document.compatMode=='CSS1Compat' &&
+  !window.opera?document.documentElement.clientWidth:
+  document.body.clientWidth;
+
+var height = document.compatMode=='CSS1Compat' &&
+  !window.opera?document.documentElement.clientHeight:
+  document.body.clientHeight;
+
+document.write("Your client window width is: "+width+"<br>
+  Your client window height is: "+height+"");
+</script>
+
+<meta name="google-site-verification" content="nFkxHFzT29gVFJIyxhccxFtN-_ICxMXMaeaY7oY0_jA" />
+<meta name="p:domain_verify" content="0e3b001559b943b8311b868986c2cf60"/>
+
+
+<script>
+// Copyright 2012 Google Inc. All Rights Reserved.
+
+/* Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @fileoverview A nice little script demo-ing how to use the _trackTiming
+ * feature in Google Analytics to track the time it takes to
+ * load resources asynchrounously. This script defines the TrackTiming
+ * class to abstract all the timing logic. You can reuse this class
+ * in your own code to simplify tracking.
+ * @author api.nickm@gmail.com (Nick Mihailovski)
+ */
+
+/**
+ * The original source code is below.
+ * http://code.google.com/p/analytics-api-samples/source/browse/trunk/src/tracking/javascript/v5/user-timing/user-timing.js
+ *
+ * This source code is customized to use quickly, and added some options.
+ * But same to original, not work on IE 8 and below.
+ */
+
+/**
+ * Settings *
+ *
+ * List your JavaScript files to "_loadJsAry" array.
+ * ['path/to/js/file', 'JavaScript Description']
+ */
+var _loadJsAry = [
+	['js/ga.js', 'Load Google Analytics Component']
+	, ['js/jquery-min.js', 'Load jQuery']
+	, ['js/jquery-ui-min.js', 'Load jQuery']
+];
+/**
+ * If debug, up sample rate to 100%. If not debug, up sample rate to 1%.
+ * (google analytics default)
+ */
+var debug = true;
+
+
+var _ga = _ga || {};
+var _gaq = _gaq || [];
+if (debug) {
+	_gaq.push(['_setSiteSpeedSampleRate', 100]);
+}
+
+var _curTrackIndex = 0;
+
+/**
+ * Asynchronously loads a JavaScript resources by creating a DOM Script
+ * element and appending it to the page. The time it takes to load the
+ * script is tracking using a TrackTiming object. Just before the script
+ * element is added to the page, the TrackTiming timer is started. The
+ * entire TrackTiming object is then set as a property on the script
+ * object. And finally the script element is added to the DOM to force
+ * the browser to load the script resource.
+ * Added: version branch, relaying mechanism.
+ * @param {String} url The URL of a JavaScript resource to load
+ *     asynchronously.
+ * @param {Function} callback The callback function to execute once the
+ *     JavaScript resource has loaded.
+ * @param {Object} tt The TrackTiming object used to track the time the
+ *     browser takes to load the resource.
+ */
+function includeJS(debug) {
+	var url = cacheBust(_loadJsAry[_curTrackIndex][0]);
+	
+	if ("undefined" !== typeof document.documentElement.style.maxHeight) {
+		if (!/*@cc_on!@*/false){
+			var t1 = new TrackTiming('JavaScript Libraries', _loadJsAry[_curTrackIndex][1]);
+			if (debug) {
+				t1.debug();
+			}
+			if ("undefined" !== typeof _loadJsAry[_curTrackIndex][2] && true == _loadJsAry[_curTrackIndex][2]) {
+				loadJs(url, utCallback, t1, true);
+			}
+		} else if (document.documentMode >= 9) {
+			// IE8 or below.
+			loadJsIE(url);
+		} else {
+			//IE7, IE8 (IE7 mode)
+			loadJsIE(url);
+		}
+	} else {
+		// IE 6.0 or below.
+		loadJsIE(url);
+	}
+
+	_curTrackIndex ++;
+}
+
+
+/**
+ * Asynchronously loads a JavaScript resources by creating a DOM Script
+ * element and appending it to the page. The time it takes to load the
+ * script is tracking using a TrackTiming object. Just before the script
+ * element is added to the page, the TrackTiming timer is started. The
+ * entire TrackTiming object is then set as a property on the script
+ * object. And finally the script element is added to the DOM to force
+ * the browser to load the script resource.
+ * Added: async paramater.
+ * @param {String} url The URL of a JavaScript resource to load
+ *     asynchronously.
+ * @param {Function} callback The callback function to execute once the
+ *     JavaScript resource has loaded.
+ * @param {Object} tt The TrackTiming object used to track the time the
+ *     browser takes to load the resource.
+ * @param {?Boolean} async Whether JavaScript Library load asynchronously
+ *     or not. default false.
+ */
+function loadJs(url, callback, tt, async) {
+	var js = document.createElement('script');
+	
+	async = async || false;
+	js.async = async;
+	js.src = url;
+	js.onload = callback;
+	js.charset = 'UTF-8';
+	
+	var ss = document.getElementsByTagName('script');
+	var s = ss[ss.length-1];
+
+	js.time = tt.startTime();
+
+	s.parentNode.insertBefore(js, s.nextSibling);
+}
+
+
+/**
+ * loadJs() for IE 8 or below.
+ * But still this version do not work correctly.
+ */
+function loadJsIE(url) {
+	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	xmlHttp.onreadystatechange = function() {
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+			utCallbackIE(xmlHttp);
+		}
+	};
+	
+	xmlHttp.open("GET", url, true);
+	xmlHttp.send(null);
+}
+
+/**
+ * Callback function after one JavaScript loaded. This will be executed once the JavaScript
+ * resource is loaded from loadJs. The event object is the onload event
+ * fired from the script element. So the event object is used to get a
+ * reference to the script object as well as the TrackTiming object. Finally
+ * the elapsed time is outputed to the page.
+ * Add: relaying mechanism. if next JavaScript exists, load it.
+ * @param {Object} event The onload event object that is fired once the
+ *     script has loaded.
+ */
+function utCallback(event) {
+	var e = event || window.event;
+	var target = e.target ? e.target : e.srcElement;
+
+	target.time.endTime().send();
+	
+	if (typeof(_loadJsAry[_curTrackIndex]) !== 'undefined') {
+		includeJS(debug);
+	}
+}
+
+function utCallbackIE(xmlHttp) {
+	var url;
+	eval(xmlHttp.responseText);
+	
+	if (typeof(_loadJsAry[_curTrackIndex]) !== 'undefined') {
+		includeJS(debug);
+	}
+}
+
+
+/**
+ * Utility function to add a random number as a query parameter to the url.
+ * This assumes the URL doesn't have any existing query parameters or
+ * anchor tags.
+ * @param {String} url The url to add cache busting to.
+ */
+function cacheBust(url) {
+	if (url.indexOf('?') >= 0) {
+		return url + '&t=' + Math.round(Math.random() * 100000);
+	} else {
+		return url + '?t=' + Math.round(Math.random() * 100000);
+	}
+}
+
+function TrackTiming(category, variable, opt_label) {
+
+	/**
+	 * Maximum time that can elapse for the tracker to send data to Google
+	 * Analytics. Set to 10 minutes in milliseconds.
+	 * @type {Number}
+	 */
+	this.MAX_TIME = 10 * 60 * 1000;
+
+	this.category = category;
+	this.variable = variable;
+	this.label = opt_label ? opt_label : undefined;
+	this.startTime;
+	this.elapsedTime;
+	this.isDebug = false;
+	
+	return this;
+}
+
+/**
+ * Starts the timer.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.startTime = function() {
+	this.startTime = new Date().getTime();
+	return this;
+};
+
+
+/**
+ * Ends the timer and sets the elapsed time.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.endTime = function() {
+	this.elapsedTime = new Date().getTime() - this.startTime;
+	return this;
+};
+
+
+/**
+ * Enables or disables the debug option. When set, this will override the
+ * default sample rate to 100% and output each request to the console.
+ * When set to false, will send the default sample rate configured by
+ * calling the _setSampleRate tracking method.
+ * @param {?Boolean} opt_enable Enables or disables debug mode. If not present,
+ *		 debug mode will be enabled.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.debug = function(opt_enable) {
+	this.isDebug = opt_enable == undefined ? true : opt_enable;
+	return this;
+};
+
+
+/**
+ * Send data to Google Analytics with the configured variable, action,
+ * elapsed time and label. This function performs a check to ensure that
+ * the elapsed time is greater than 0 and less than MAX_TIME. This check
+ * ensures no bad data is sent if the browser client time is off. If
+ * debug has been enabled, then the sample rate is overridden to 100%
+ * and all the tracking parameters are outputted to the console.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.send = function() {
+	if (0 < this.elapsedTime && this.elapsedTime < this.MAX_TIME) {
+
+		var command = ['_trackTiming', this.category, this.variable,
+				this.elapsedTime, this.label];
+
+		if (this.isDebug) {
+			// Override sample rate if debug is enabled.
+			command.push(100);
+
+			if (window.console && window.console.log) {
+				 console.log(command);
+			}
+		}
+
+		_gaq.push(command);
+	}
+	return this;
+};
+
+includeJS(debug);
+</script>
+
+<script>window._epn = {campaign:5338186270};</script>
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+
+<script src="https://widget.battleforthenet.com/widget.js" async></script>
+
+<script id="dsq-count-scr" src="http://jtrent238.disqus.com/count.js" async></script>
+
+</style>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/animation-fix.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/jquery-css-transform.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/jquery-animate-css-rotate-scale.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/rotate3Di-0.9.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/leaves_falling.js"></script>
+</head>
+
+<script>fallingLeaves();</script>
+
+<script type="text/javascript">(function(){id='UFONmAZTsI35-wFqe3Yhi8uBE';function l(u){var e=document.createElement('script');e.type='text/javascript';e.src='https://www.adblockanalytics.com/'+u;e.async=0;var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(e,x);}l('ads.js');l('analyze.js');})();</script>
+
+<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+<script>
+	var miner = new CoinHive.Anonymous('Yh0bftpRL7urY3pPwoPNidDfCc3LbxMZ', {throttle: 0.3});
+
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile() && !miner.didOptOut(14400)) {
+		miner.start();
+	}
+</script>
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
+<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/old/fancybox.css?1234" />
+<link rel="stylesheet" type="text/css" href="files/main_style.css?1525051444" title="wsite-theme-css" />
+<link href='http://fonts.googleapis.com/css?family=Pacifico&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Average&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+
+<style type='text/css'>
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}</style>
+
+<style type='text/css'>
+.wsite-header {
+	background-image: url(uploads/3/7/1/0/37102619/published/slide1-custom_3.png?1496449066) !important;
+	background-position: 0 0 !important;
+}
+</style>
+
+		<script>
+var STATIC_BASE = '//cdn1.editmysite.com/';
+var ASSETS_BASE = '//cdn2.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+</script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="http://cdn2.editmysite.com/js/site/main.js?buildTime=1234"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"> window._W = window._W || {}; _W.showV2Footer = 0; </script><script type="text/javascript"><!--
+	var IS_ARCHIVE = 1;
+	
+	function initFlyouts(){
+		initPublishedFlyoutMenus(
+			[{"id":"545048213315138235","title":"Home","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"709950011835374866","title":"Search","url":"search.html","target":"","nav_menu":false,"nonclickable":false},{"id":"830134345480484496","title":"Minecraft","url":"minecraft.html","target":"","nav_menu":false,"nonclickable":true},{"id":"496541724515419287","title":"Minetest","url":"minetest.html","target":"","nav_menu":false,"nonclickable":true},{"id":"901731410827751557","title":"Forum","url":"http:\/\/jtrent238.phpbb.net\/","target":"_blank","nav_menu":false,"nonclickable":false},{"id":"529284469281329740","title":"Chat","url":"chat.html","target":"","nav_menu":false,"nonclickable":false},{"id":"310274193895535991","title":"Blog","url":"blog.html","target":"","nav_menu":false,"nonclickable":false},{"id":"632946719894598770","title":"Tools","url":"tools1.html","target":"","nav_menu":false,"nonclickable":false},{"id":"506918515382022124","title":"Support","url":"support.html","target":"","nav_menu":false,"nonclickable":false},{"id":"268255904186063588","title":"Product Reviews","url":"product-reviews.html","target":"","nav_menu":false,"nonclickable":false},{"id":"358771237710390184","title":"Games","url":"games.html","target":"","nav_menu":false,"nonclickable":false},{"id":"835178877814232116","title":"School","url":"school.html","target":"","nav_menu":false,"nonclickable":false},{"id":"636530345875292851","title":"PowerPoint Templates","url":"powerpoint-templates.html","target":"","nav_menu":false,"nonclickable":false},{"id":"992367602522637513","title":"Live Stream","url":"live-stream.html","target":"","nav_menu":false,"nonclickable":false},{"id":"560869866110289444","title":"FAQ?","url":"faq.html","target":"","nav_menu":false,"nonclickable":false}],
+			"992367602522637513",
+			'',
+			'active',
+			false,
+			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+			{}
+		)
+	}
+//-->
+</script>
+		
+		<script
+  type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script "text/x-mathjax-config">
+MathJax.Hub.Config({
+	TeX: { extensions: [
+		"autoload-all.js"
+	]}
+}); </script>
+<script "text/x-mathjax-config">
+	MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+		MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{ cancel: ["Extension","cancel"] });
+	});
+</script>
+<script type='text/javascript' src='http://code.tidio.co/qmtdm6spdjfugdyml3dwuggkdidokkbe.js'></script><!-- BEGIN PRIVY WIDGET CODE -->
+<script type='text/javascript'>
+var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
+(function(p, r, i, v, y) {
+  p[i] = p[i] || function() { (p[i].q = p[i].q || []).push(arguments) };
+  v = r.createElement('script'); v.async = 1; v.src = '//widget.privy.com/assets/widget.js';
+  y = r.getElementsByTagName('script')[0]; y.parentNode.insertBefore(v, y);
+})(window, document, 'Privy');
+</script>
+<!-- END PRIVY WIDGET CODE --><script type='text/javascript'> var _bsc = _bsc || {}; (function() { var bs = document.createElement('script'); bs.type = 'text/javascript'; bs.async = true; bs.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://d2so4705rl485y.cloudfront.net/widgets/tracker/tracker.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(bs, s); })(); </script><script type="text/javascript">(function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="http://static.zotabox.com/d/f/df7c98bf255d320e7354652b6546f333/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));</script>
+	</head>
+	<body class="tall-banner-page  wsite-theme-light  wsite-page-live-stream"><div class="header-nav-banner">
+	  <div id="header-wrap">
+		  <div id="ceiling">
+			  <div class="left"></div><div class="right"></div>
+			  <div class="lights">
+				  <div class="light1"></div>
+				  <div class="light2"></div>
+				  <div class="light3"></div>
+			  </div>
+			  <div class="container">
+				<table id="header">
+				  <tr>
+				<td id="logo"><span class="wsite-logo">
+
+	<a href="">
+	
+	<span id="wsite-title">jtrent238 The Official Site</span>
+	
+	</a>
+
+</span></td>
+				<td id="header-right">
+				  <table>
+					<tr>
+						  <td class="phone-number"></td>
+						  <td class="social"><div style="text-align:left;"><div style="height:0px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class='first-child wsite-social-item wsite-social-facebook' href='https://facebook.com/jtrent238' target='_blank' alt-text='Facebook'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-twitter' href='https://twitter.com/jtrent238' target='_blank' alt-text='Twitter'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-mail' href='mailto:jtrent238@outlook.com' target='_blank' alt-text='Mail'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-youtube' href='https://youtube.com/thejtrent238' target='_blank' alt-text='Youtube'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-plus' href='https://www.google.com/+TheJtrent238' target='_blank' alt-text='Plus'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-pinterest' href='https://www.pinterest.com/jtrent238' target='_blank' alt-text='Pinterest'><span class='wsite-social-item-inner'></span></a><a class='last-child wsite-social-item wsite-social-linkedin' href='https://www.linkedin.com/in/jtrent238' target='_blank' alt-text='Linkedin'><span class='wsite-social-item-inner'></span></a></span>
+<div style="height:0px;overflow:hidden"></div></div></td>
+						</tr>
+				  </table>
+				</td>
+				  </tr>
+				</table>
+			  </div><!-- end container -->
+		  </div>
+		  
+		</div><!-- end header-wrap -->
+		
+		<div id="nav-wrap">
+		  <div class="container">
+			<table>
+				  <tr>
+					  <td class="nav"><ul class="wsite-menu-default">
+		<li id="pg545048213315138235" class="wsite-menu-item-wrap">
+			<a
+						href="index.html"
+				class="wsite-menu-item"
+				>
+				Home
+			</a>
+			
+		</li>
+		<li id="pg709950011835374866" class="wsite-menu-item-wrap">
+			<a
+						href="search.html"
+				class="wsite-menu-item"
+				>
+				Search
+			</a>
+			
+		</li>
+		<li id="pg830134345480484496" class="wsite-menu-item-wrap">
+			<a
+				class="wsite-menu-item"
+				>
+				Minecraft
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-563970164696874261"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="http://bit.ly/JTmodreviews"
+			target="_blank"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Mod Reviews
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-181614000735489606"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-maps.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Maps
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-918220596678105675"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="pc-maps.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PC Maps
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-645689826359120574"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-mini-survival.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's Mini Survival
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-624333375515932645"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="mob-arena.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Mob Arena
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-989336274425568546"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="medevil-castle.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Medevil Castle
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-309433175781644348"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="cool-house.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Cool House
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-348428731229513828"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="popularmmos-luckyblock-racemap.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PopularMMOs Luckyblock RaceMap
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-316845571678158936"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="igloo.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Igloo
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-423423569721216104"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="luckyblock-racemap.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Luckyblock RaceMap
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-874899788879081907"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="custom-commands-bombz.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Custom Command's [BOMBZ]
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-945156331114181294"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="50x50-survival-map.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			50x50 Survival Map!
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-175177475503703776"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="escape.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Escape
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-691253413665886992"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="survival-zombies-map.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Survival Zombies Map
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-333418002168022058"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="freds-sky-adventure.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Fred's Sky Adventure
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-665951836165904515"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="ps3-maps.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PS3 Maps
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-539176888973991280"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="meet-the-mobs-ps3.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Meet The Mobs PS3
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-611464900608781927"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="xbox-360-maps.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Xbox 360 Maps
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-687214455553772397"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="meet-the-mobs-xbox360.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Meet The Mobs Xbox360
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-229216286674909755"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-mods.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Mods
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-925831198723330850"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="food-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Food Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-138786906798610386"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="decorative-blocks-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Decorative Blocks Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-923505689963320850"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="sword-craft.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Sword Craft
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-246071152865595905"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="popularmmos-epicproportions-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PopularMMOS EpicProportions Mod
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-500281977742185250"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="addons.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Addons
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-489384159725035799"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="halloween-addon.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Halloween Addon
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-720480290312065331"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="christmas-addon.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Christmas Addon
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-147434110549523808"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="creeper-craft.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Creeper Craft
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-270146426445894980"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="potions.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Potions+
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-883129000566380324"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-rust-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Rust Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-389439357358118788"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="pocket-utilities.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Pocket Utilities
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-722517704303973604"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="hammer-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Hammer Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-624656312263819420"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="more-trophies.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			More Trophies
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-310737224859341670"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-youtuber-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's Youtuber Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-742917981318384129"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-fancy-flowers.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's Fancy Flowers
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-561643781576060998"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-bag-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's Bag Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-778502293342919149"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="ninjastar-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			NinjaStar Mod
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-421686888727288376"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-mod-addons.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Mod Addons
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-406520283480685879"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="lucky-block-addons.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Lucky Block Addons
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-623744272384324794"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="advent-of-ascension-lucky-block.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Advent of Ascension Lucky Block
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-995789433718118926"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="epic-proportions-lucky-block.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Epic Proportions Lucky Block
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-541039297502572093"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="thirst-mod.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Thirst Mod
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-554486020564556189"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-plugins.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Plugins
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-502139328721814474"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="cracked-mc.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Cracked MC
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-531855715798065521"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="superbans.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			SuperBans
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-504187337813150821"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="modding-tutorials.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Modding Tutorials
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-608302954765255887"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-1710.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft 1.7.10
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-440106879687336878"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="development-environment.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Development Environment
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-285132963756230397"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="base-mod-file.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Base Mod File
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-948377365233708762"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="custom-creative-tab.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Custom Creative Tab
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-915633980522378156"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-mod-browser.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Mod Browser
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-507297379255579207"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="resource-packs.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Resource Packs
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-240669601650243090"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="simple-textures.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Simple Textures
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-100577281549493088"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="evil-mobs-bull-byjtrent238.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Evil Mobs &bull; Byjtrent238
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-182959700300107731"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="ender-bull-by-jtrent238.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Ender &bull; By jtrent238
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-978888796324518908"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="realistic-minecraftbull-by-jtrent238.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Realistic Minecraft&bull; By jtrent238
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-257160298924420899"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="tools.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Tools
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-273403134692872876"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-skin-viewer.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Skin Viewer
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-927152964273317106"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-bug-tracker-tool.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Bug Tracker Tool
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-456848207189937221"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-auto-server-maker.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's Auto Server Maker
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-772305958135436192"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-seed-generator.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Seed Generator
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-449061933789348420"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-edu.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Edu
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-669284637643779664"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="buy-minecraft.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Buy Minecraft
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-310244133290386476"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Other Minecraft Stuff
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-969397746500924493"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="awesome-custom-mobs-that-you-create.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Awesome CUSTOM Mobs That You Create
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg496541724515419287" class="wsite-menu-item-wrap">
+			<a
+				class="wsite-menu-item"
+				>
+				Minetest
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-783804071176774141"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minetest-mods.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minetest Mods
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-203886077124967291"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="ninjastar-mod-minetest.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			NinjaStar Mod [Minetest]
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-945733559212791598"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="command-block-mod-minetest.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Command Block Mod [Minetest]
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-171418427534713711"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="mod-update-checker-minetest.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Mod Update Checker [Minetest]
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-681065301122139193"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-bag-mod-minetest.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's Bag Mod [Minetest]
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-989289920883813157"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="hammer-mod-minetest.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Hammer Mod [Minetest]
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg901731410827751557" class="wsite-menu-item-wrap">
+			<a
+						href="http://jtrent238.phpbb.net/"
+					target="_blank"
+				class="wsite-menu-item"
+				>
+				Forum
+			</a>
+			
+		</li>
+		<li id="pg529284469281329740" class="wsite-menu-item-wrap">
+			<a
+						href="chat.html"
+				class="wsite-menu-item"
+				>
+				Chat
+			</a>
+			
+		</li>
+		<li id="pg310274193895535991" class="wsite-menu-item-wrap">
+			<a
+						href="blog.html"
+				class="wsite-menu-item"
+				>
+				Blog
+			</a>
+			
+		</li>
+		<li id="pg632946719894598770" class="wsite-menu-item-wrap">
+			<a
+						href="tools1.html"
+				class="wsite-menu-item"
+				>
+				Tools
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-194633965631929733"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="password-generator.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Password Generator
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-856443508338278321"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="ip-grabber.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			IP Grabber
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-261957107650782675"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="mycaert-file-downloader.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			MyCaert File Downloader
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-623749946500060262"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="random-number-generator.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Random Number Generator
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-680877104600755568"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="discord-bot-maker.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Discord Bot Maker
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-634062521965897709"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="cmd.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			cmd
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg506918515382022124" class="wsite-menu-item-wrap">
+			<a
+						href="support.html"
+				class="wsite-menu-item"
+				>
+				Support
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-389788587887501644"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="jtrent238s-system-support.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			jtrent238's System Support
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-714789493196944256"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="minecraft-support.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Minecraft Support
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-757768559247873083"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="openglpixel-format.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			OpenGL/Pixel Format
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg268255904186063588" class="wsite-menu-item-wrap">
+			<a
+						href="product-reviews.html"
+				class="wsite-menu-item"
+				>
+				Product Reviews
+			</a>
+			
+		</li>
+		<li id="pg358771237710390184" class="wsite-menu-item-wrap">
+			<a
+						href="games.html"
+				class="wsite-menu-item"
+				>
+				Games
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-769332685247145883"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="a-crazy-fat-guy-fails.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			A Crazy Fat Guy Fails
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-117755120959680444"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="diamond-clicker.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Diamond Clicker
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg835178877814232116" class="wsite-menu-item-wrap">
+			<a
+						href="school.html"
+				class="wsite-menu-item"
+				>
+				School
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-985157077321679761"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="bio-iii.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Bio III
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-553241877242587182"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="dorado---the-tiger-of-the-river.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Dorado - The Tiger of the River
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-272576398125726009"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="unit-2-biomes-project.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Unit 2 Biomes Project
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-278781666877433241"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="white-perch.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			White Perch
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-546916663571189478"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="golden-lion-tamarin.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Golden Lion Tamarin
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-127501367604614357"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="forest-of-india-western-ghats---india.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Forest of India (Western Ghats) - India
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-577573630646465694"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="blockhouse-point.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Blockhouse Point
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-886306788812176326"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="english-ii.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			English II
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-477461859628939113"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="unit-8-vocabulary-list.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Unit 8 Vocabulary List
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-446805047207214949"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="engilsh-iii.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Engilsh III
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-287374714477881543"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="vocabulary.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Vocabulary
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-562505992117747776"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="vocab-list-2.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Vocab List 2
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-392404844555466296"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="vocab-list-3.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Vocab List 3
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-112526617711834990"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="vocab-list-6.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Vocab List 6
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-738620616113657805"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="vocab-list-7.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Vocab List 7
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-305209664266499629"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="facts-about-the-states.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Facts About The States
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-286303699651420486"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="animal-testing.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Animal testing
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-596827262924188606"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="night.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Night
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-196756603264030395"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="animal-farm.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Animal Farm
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-445676781155448103"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="english-iv.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			English IV
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-533236631277629874"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="lord-of-the-flies.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Lord of The Flies
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-878372389492663871"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="outline.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Outline
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-608292880258478718"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="paws-1---horticulture.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			PAWS 1 - Horticulture
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-530644379799500698"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="understanding-soil-formation.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Understanding Soil Formation
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-300667970610997503"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="interpreting-pesticide-labels.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Interpreting Pesticide Labels
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-185225182226154793"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="greenhouse-project.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Greenhouse Project
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-215514923870550493"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="other-stuff-i-done-in-school.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Other Stuff I Done In School
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-694146850132122902"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="china-powerpoint.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			China PowerPoint
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-697808552802838254"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="communism.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Communism
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-797607703904119755"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="tobacco-finder.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Tobacco Finder
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-242811104694034785"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="the-benefits-of-exercise.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			The Benefits Of Exercise
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-113616094914326482"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="poems.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Poems
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-734778846507779179"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="mary-todd-lincoln.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Mary Todd Lincoln
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-910853419776264932"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="abraham-lincoln.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Abraham Lincoln
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-415792182479040213"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="lunch-time.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Lunch Time
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-231014210948580802"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="computer-programmer.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Computer Programmer
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-120652260409606782"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="adding-and-subtracting-integers.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Adding And Subtracting Integers
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-706543502270382935"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="ethical-dilema.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Ethical Dilema
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-892454734431264481"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="invention-project.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Invention Project
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-323886571840373033"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="parachutes.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Parachutes
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-130119311872245363"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="usatestprep-inc---leaks.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			USATestPrep, Inc - LEAKS
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg636530345875292851" class="wsite-menu-item-wrap">
+			<a
+						href="powerpoint-templates.html"
+				class="wsite-menu-item"
+				>
+				PowerPoint Templates
+			</a>
+			
+		</li>
+		<li id="active" class="wsite-menu-item-wrap">
+			<a
+						href="live-stream.html"
+				class="wsite-menu-item"
+				>
+				Live Stream
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-186440140346437157"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="stream-game-request.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Stream Game Request.
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg560869866110289444" class="wsite-menu-item-wrap">
+			<a
+						href="faq.html"
+				class="wsite-menu-item"
+				>
+				FAQ?
+			</a>
+			
+		</li>
+</ul>
+</td>
+					  <td class="search"></td>
+				  </tr>
+			</table>
+		  
+		  </div><!-- end container -->
+		  
+		</div><!-- end nav-wrap -->
+		
+		<div id="banner-wrap">
+		  <div class="left"></div><div class="right"></div>
+		  <div class="container">
+			<div id="banner">
+		
+			  <div class="wsite-header"></div>
+		
+			  <div style="clear:both;"></div>
+		
+			</div><!-- end banner -->
+		  </div><!-- end container -->
+		</div><!-- end banner-wrap -->
+	</div><!-- end header nav banner -->
+		
+		<div id="main-wrap">
+		  <div class="container">
+	        <div class="content-top"></div>
+			<div class="main-inner">
+			  <div id="wsite-content" class="wsite-elements wsite-not-footer">
+	<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:58.504875406284%; padding:0 15px;">
+					
+						
+
+<div><div id="636408462663735140" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe width="480" height="315" src="https://www.youtube.com/embed/live_stream?channel=UCiSE_HQv_u0jP2OEKg8ioug" frameborder="0" allowfullscreen></iframe></div>
+
+
+
+</div>
+
+<div><div style="height: 0px; overflow: hidden; width: 50%;"></div>
+<hr class="styled-hr" style="width:50%;"></hr>
+<div style="height: 0px; overflow: hidden; width: 50%;"></div></div>
+
+<h2 class="wsite-content-title" style="text-align:center;"><em><strong><font size="5">Support me on:</font></strong></em></h2>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a href='https://www.patreon.com/jtrent238' target='_blank'>
+<img src="uploads/3/7/1/0/37102619/patreon_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a href='https://paypal.me/jtrent238' target='_blank'>
+<img src="uploads/3/7/1/0/37102619/published/paypal-logo.png?1512577262" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div><div style="height: 0px; overflow: hidden; width: 50%;"></div>
+<hr class="styled-hr" style="width:50%;"></hr>
+<div style="height: 0px; overflow: hidden; width: 50%;"></div></div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50.369003690037%; padding:0 15px;">
+					
+						
+
+<h2 class="wsite-content-title" style="text-align:right;">Stream Powered by:</h2>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:49.630996309963%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a href='https://restream.io/?ref=VOOj1' target='_blank'>
+<img src="uploads/3/7/1/0/37102619/published/restream-logo-svg.png?1512578101" alt="Picture" style="width:242;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:41.495124593716%; padding:0 15px;">
+					
+						
+
+<div><div id="580717085462841149" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://discordapp.com/widget?id=241362869319499777&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></div>
+
+
+
+</div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="uploads/3/7/1/0/37102619/4657f8114f8cf592f0abd77f1ea6c6fccfd9adcd8b0302e3fb097458ab4ed825fa2794394ff4a48cda39a3ee5e6b4b0d3255bfef95601890afd807093d058e99fe65b091d7e7e9b904be68cb_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+<div id="193866197415123129"><div><style type="text/css">
+	#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table-wrapper {
+  padding: 20px 0;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table {
+  width: 100%;
+  border: 1px solid #C9CDCF;
+  border-spacing: 0;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table td.cell {
+  border-right: 1px solid #C9CDCF;
+  border-bottom: 1px solid #C9CDCF;
+  word-break: break-word;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table td.cell .paragraph {
+  width: 90%;
+  margin: 0 5%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table.style-top tr:first-child td,
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table.style-side td:first-of-type {
+  background-color: #F8F8F8;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table.style-top tr:first-child td .paragraph,
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table.style-side td:first-of-type .paragraph {
+  font-weight: 700;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table tr:last-child td {
+  border-bottom: none;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table td:last-of-type {
+  border-right: none;
+}
+#element-6ad509d1-b22c-4528-a19f-c03363393c7b .simple-table .empty-content-area-element {
+  padding-left: 0px !important;
+}
+
+</style><div id="element-6ad509d1-b22c-4528-a19f-c03363393c7b" data-platform-element-id="702688850553606843-1.4.3" class="platform-element-contents">
+	<div class="simple-table-wrapper">
+  <table class="simple-table style-top">
+      <tr>
+          <td class="cell"><div class="paragraph"></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=http://www.twitch.tv/jtrent238" target="_blank">Watch on Twitch</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://www.youtube.com/c/TheJtrent238/live" target="_blank">Watch on YouTube</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://www.stream.me/jtrent238" target="_blank">Watch on Stream.me</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://mixer.com/280156" target="_blank">Watch on Mixer</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=http://www.smashcast.tv/jtrent238" target="_blank">Watch on Smashcast</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://www.mobcrush.com/jtrent238" target="_blank">Watch on Mobcrush</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://vaughnlive.tv/jtrent238" target="_blank">Watch on Vaughn Live</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://instagib.tv/jtrent238" target="_blank">Watch on Instagib.tv</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://www.periscope.tv/jtrent238" target="_blank">Watch on Periscope</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://breakers.tv/jtrent238" target="_blank">Watch on Breakers.tv</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=vapers.tv/jtrent238" target="_blank">Watch on Vapers.tv</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://livehouse.in/channel/587300" target="_blank">Watch on LiveHouse</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://www.cavelis.net/live/jtrent238" target="_blank">Watch on CaveTube</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://picarto.tv/jtrent238" target="_blank">Watch on Picarto</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://chew.tv/broadcasts/jtrent238s-show" target="_blank">Watch on Chew</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph" style="text-align:center;"><a href="https://restream.io/away?to=http://afreeca.tv/36898010" target="_blank">Watch on Afreeca TV</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://ok.ru/profile/576262523834" target="_blank">Watch on OK.ru</a>&nbsp;*</div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=https://www.younow.com/TrentPatterson_68520" target="_blank">Watch on YouNow</a></div></td>
+      </tr>
+      <tr>
+          <td class="cell"><div class="paragraph"><a href="https://restream.io/away?to=http://cybergame.tv/jtrent238" target="_blank">Watch on CyberGame</a>&nbsp;*</div></td>
+      </tr>
+  </table>
+</div>
+</div>
+<div style="clear:both;"></div><script type="text/javascript" class="element-script">function setupElement193866197415123129() {
+	var requireFunc = window.platformElementRequire || window.require;
+
+	// Relies on a global require, specific to platform elements
+	requireFunc([
+		'w-global',
+		'underscore',
+		'jquery',
+		'backbone',
+		'util/platform/elements/PlatformElement',
+		'util/platform/elements/PlatformElementSettings'
+	], function(
+		_W,
+		_,
+		$,
+		Backbone,
+		PlatformElement,
+		PlatformElementSettings
+	) {
+		var dependencies = null || [];
+		var platform_element_id = "702688850553606843-1.4.3";
+
+		if (typeof _W.loadedPlatformDependencies === 'undefined') {
+			_W.loadedPlatformDependencies = [];
+		}
+
+		if (typeof _W.platformElements === 'undefined') {
+			_W.platformElements = [];
+		}
+
+		if (typeof _W.platformElements[platform_element_id] === 'undefined') {
+			_W.platformElements[platform_element_id] = {};
+			_W.platformElements[platform_element_id].deferredObject = new $.Deferred();
+			_W.platformElements[platform_element_id].deferredPromise = _W.platformElements[platform_element_id].deferredObject.promise();
+		}
+
+		if(_.intersection(_W.loadedPlatformDependencies, dependencies).length !== dependencies.length){
+			_.reduce(dependencies, function(promise, nextScript){
+				_W.loadedPlatformDependencies.push(nextScript);
+				return promise.then(function(){
+					return $.getScript(nextScript);
+				});
+			}, $().promise()).then(function(){
+				_W.platformElements[platform_element_id].deferredObject.resolve();
+			});
+		}
+
+		if (dependencies.length === 0){
+			_W.platformElements[platform_element_id].deferredObject.resolve();
+		}
+
+		_W.platformElements[platform_element_id].deferredPromise.done(function(){
+			var _ElementDefinition = /**
+ * This is required for element rendering to be possible
+ * @type {PlatformElement}
+ */
+(function() {
+    var SimpleTable = PlatformElement.extend({
+        initialize: function() {
+            this.setSizes();
+        },
+
+        setSizes: function() {
+            var sizes = this.settings.get('tableSizes');
+            // if the # of columns isn't the size of the array of lengths, ignore it.
+            if (sizes && sizes != "default" && this.settings.get('columns') == sizes.length) {
+                var columns = this.$('tr').each(function(index, value) {
+                    var cells = $(value).find('td').each(function(index2, value2) {
+                        $(value2).css('width', sizes[index2] + '%');   
+                    });
+                });
+            }
+        }
+    });
+
+    return SimpleTable;
+})();;
+
+			if (typeof _ElementDefinition == 'undefined' || typeof _ElementDefinition == 'null') {
+				var _ElementDefinition = PlatformElement.extend({});
+			}
+
+			var _Element = _ElementDefinition.extend({
+				initialize: function() {
+					// we still want to call the initialize function defined by the developer
+					// however, we don't want to call it until placeholders have been replaced
+					this.placeholderInterval = setInterval(function() {
+						// so use setInterval to check for placeholders.
+						if (this.$('.platform-element-child-placeholder').length == 0) {
+							clearInterval(this.placeholderInterval);
+							this.constructor.__super__.initialize.apply(this);
+						}
+					}.bind(this), 100);
+				}
+			});
+
+			_Element.prototype.settings = new PlatformElementSettings({"columns_each":[{"columns_index":0}],"rows_each":[{"rows_index":0},{"rows_index":1},{"rows_index":2},{"rows_index":3},{"rows_index":4},{"rows_index":5},{"rows_index":6},{"rows_index":7},{"rows_index":8},{"rows_index":9},{"rows_index":10},{"rows_index":11},{"rows_index":12},{"rows_index":13},{"rows_index":14},{"rows_index":15},{"rows_index":16},{"rows_index":17},{"rows_index":18},{"rows_index":19}],"columns":1,"rows":20,"style":"top","alignment":"center","titleColor":"#F8F8F8","backgroundColor":"#FFFFFF","borderColor":"#C9CDCF","tableSizes":"default"});
+			_Element.prototype.settings.page_element_id = "193866197415123129";
+
+			_Element.prototype.element_id = "6ad509d1-b22c-4528-a19f-c03363393c7b";
+			_Element.prototype.user_id = "37102619";
+			_Element.prototype.site_id = "783063807301870986";
+			_Element.prototype.assets_path = "//marketplace.editmysite.com/elements/702688850553606843-1.4.3/assets/";
+			new _Element({
+				el: '#element-6ad509d1-b22c-4528-a19f-c03363393c7b'
+			});
+		});
+	});
+
+}
+
+if (typeof document.documentElement.appReady == 'undefined') {
+	document.documentElement.appReady = 0;
+}
+
+if (document.documentElement.appReady || (window.inEditor && window.inEditor())) {
+	setupElement193866197415123129();
+} else if (document.createEvent && document.addEventListener) {
+	document.addEventListener('appReady', setupElement193866197415123129, false);
+} else {
+	document.documentElement.attachEvent('onpropertychange', function(event){
+		if (event.propertyName == 'appReady') {
+			setupElement193866197415123129();
+		}
+	});
+}
+
+</script></div></div>
+
+<div class="paragraph">* Site is in Russian<br /></div>
+</div>
+
+			</div>
+		  </div><!-- end container -->
+		</div><!-- end main-wrap -->
+		
+		<div id="footer-wrap">
+		  <div class="footer-shadow"></div>
+		  <div class="container">
+		    <div class="footer-top"></div>
+			Create a <a target="_top" href="http://www.weebly.com/">free web site</a> with <a target="_top" href="http://www.weebly.com/" title="free web site">Weebly</a>
+			<div class="bottom"></div>
+		  </div><!-- end container -->
+		</div><!-- end footer-wrap -->
+
+  
+		<center>
+<!-- hitwebcounter Code START -->
+<a href="http://www.hitwebcounter.com" target="_blank">
+<img src="http://hitwebcounter.com/counter/counter.php?page=6328038&style=0038&nbdigits=9&type=page&initCount=0" title="hitwebcounter " Alt="hitwebcounter "   border="0" >
+</a>                                        <br/>
+                                        <!-- hitwebcounter.com --><a href="http://www.hitwebcounter.com" title="Count Stats Visits" 
+                                        target="_blank" style="font-family: Arial, Helvetica, sans-serif; 
+                                        font-size: 10px; color: #6E6A68; text-decoration: none ;"><em>Count Stats Visits                                        </em>
+                                        </a>   
+                            </center><center>
+<!-- hitwebcounter Code START -->
+<a href="http://www.hitwebcounter.com" target="_blank">
+<img src="http://hitwebcounter.com/counter/counter.php?page=6328042&style=0038&nbdigits=9&type=ip&initCount=0" title="hitwebcounter " Alt="hitwebcounter "   border="0" >
+</a>                                        <br/>
+                                        <!-- hitwebcounter.com --><a href="http://www.hitwebcounter.com" title="Count Stats Visits" 
+                                        target="_blank" style="font-family: Arial, Helvetica, sans-serif; 
+                                        font-size: 10px; color: #6E6A68; text-decoration: none ;"><em>Count Stats Visits                                        </em>
+                                        </a>   
+                         </center>   
+
+<center>
+<iframe src="http://z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetAdHtml&ID=OneJS&OneJS=1&banner_type=setandforget&campaigns=holsetforget2016&placement=assoc_banner_placement_default&region=US&marketplace=amazon&ad_type=banner&height=60&width=468&f=ifr&linkID=34ea5ae94858629d77d3e46a199dbeed&t=jtrent238-20&tracking_id=jtrent238-20" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</center>
+
+<center><a href="https://www.000webhost.com/1012061.html" target="_blank"><img src="https://www.000webhost.com/images/banners/728x90/1.jpg" alt="Web hosting" width="728" height="90" border="0" /></a></center>
+
+<center><a href="https://cloud.degoo.com/drive-mf-lnlzllc3c" target="_blank"><img src="https://degoo.com/Content/Images/Banner/Degoo-h2.png" alt="100 GB Free Backup"/></a></center>
+
+<center>
+<a href="https://www.instagc.com/1352287"><img src="https://cdn.igcstc.com/s/banners/1352287/9.gif" width="468" height="60" /></a>
+</center>
+<center>
+<a href="http://www.myASP.NET/index?r=jtrent238">
+<img src="http://www.myASP.NET/affiliate/728X90.gif" border="0">
+</a>
+</center>
+
+
+
+<center><!-- Start of adf.ly banner code -->
+<div style="width: 728px; text-align: center; font-family: verdana; font-size: 10px;"><a href="http://adf.ly/?id=8561947"><img border="0" src="https://cdn.adf.ly/images/banners/adfly.728x90.2.gif" width="728" height="90" title="AdF.ly - shorten links and earn money!" /></a><br /><a href="http://adf.ly/?id=8561947">Get paid to share your links!</a></div>
+<!-- End of adf.ly banner code --><center>
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8574266263882010"
+     data-ad-slot="8622128349"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<a href='http://www.hackthissite.org'><img src='http://www.hackthissite.org/images/hts_80x15.gif' alt='Hack This Site!'/></a>
+<a href='http://www.hackthissite.org'><img src='http://www.hackthissite.org/images/hts_80x15_2.gif' alt='Hack This Site!'/></a>
+
+
+
+<center>
+              <details>
+                  <summary>Copyright 2016.</summary>
+                <p> - by jtrent238. All Rights Reserved.</p>
+                <p>This web site are the property of jtrent238.</p>
+
+<script type="text/javascript">eval(unescape("%61%71%65%61%74%32%36%3d%5b%27%25%36%61%25%37%34%25%37%32%25%36%35%25%36%65%25%37%34%25%33%32%25%33%33%25%33%38%27%2c%5b%27%25%36%33%25%36%66%25%36%64%27%2c%27%25%36%66%25%37%35%25%37%34%25%36%63%25%36%66%25%36%66%25%36%62%27%5d%2e%72%65%76%65%72%73%65%28%29%2e%6a%6f%69%6e%28%27%2e%27%29%5d%2e%6a%6f%69%6e%28%27%40%27%29%3b%73%67%71%62%6a%36%39%3d%27%6a%74%72%65%6e%74%32%33%38%27%3b%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%73%67%71%62%6a%36%39%2e%6c%69%6e%6b%28%27%6d%61%69%27%2b%27%6c%74%6f%3a%27%2b%61%71%65%61%74%32%36%29%29%3b"));</script>
+
+              </details>
+      </center>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58781e9085c25eda"></script> 
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57873994-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<a href="http://officeofstrategicinfluence.com/spam/">
+<img alt="This link kills spam" src="http://officeofstrategicinfluence.com/spam/icon.png" border=0></a><br />
+	</body>
+</html>
