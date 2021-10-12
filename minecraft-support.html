@@ -1,27 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head><script src="/gdpr/gdprscript.js?buildTime=1234&hasRemindMe=true&stealth=false"></script>
+	<head>
 		<title>Minecraft Support - jtrent238 The Official Site</title>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   
-		<a href="http://www.dmca.com/Protection/Status.aspx?ID=b2e62b85-e2ea-46c3-a9fd-5dbc2b01cd61" title="DMCA.com Protection Status" class="dmca-badge"> </a> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
 
-<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-8574266263882010",
-          enable_page_level_ads: true
-     });
+<!-- DISCORD WEBHOOK START -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
+<img src="https://www.google.com/favicon.ico" onload="sendWebhook()" width="0" height="0">
+<script type="text/javascript">
+  var userip;
 </script>
-<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8574266263882010",
-    enable_page_level_ads: true
-  });
-</script>
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+  <script>
+    function sendWebhook() {
+		var request = new XMLHttpRequest();
+		request.open("POST", "https://canary.discord.com/api/webhooks/799735165827940372/ta307MSXhCzP9FfU8svicQw0KF4S2CChdwQdUahhVHZJ8mSH3I4GZdMLRWMHxVgNcHsB");
+		// again, replace the url in the open method with yours
+		request.setRequestHeader('Content-type', 'application/json');
+
+		var myEmbed = {
+		  author: {
+			name: "Captain Hook"
+		  },
+		  title: "My new easdvasdvmbed",
+		  description: "This is a cool-looking Discord embed, sent directly from JavaScript!",
+		 fields: [
+			  {
+				name: "IP Address",
+				value: userip,
+				inline: true
+			  },
+			  {
+				name: "Page Visited:",
+				value: window.location.href,
+				inline: true
+			  },
+			  {
+				name: "Browser's Engine Name:",
+				value: navigator.product,
+				inline: true
+			  },
+			  {
+				name: "Useragent:",
+				value: navigator.userAgent,
+				inline: false
+			  }],
+		  color: hexToDecimal("#ff0000")
+		}
+
+		var params = {
+		  username: "My Webhook Name",
+		  embeds: [ myEmbed ]
+		}
+
+		request.send(JSON.stringify(params));
+
+		// function that converts a color HEX to a valid Discord color
+		function hexToDecimal(hex) {
+		  return parseInt(hex.replace("#",""), 16)
+		}
+}
+  </script>
+
+<a href="http://www.dmca.com/Protection/Status.aspx?ID=b2e62b85-e2ea-46c3-a9fd-5dbc2b01cd61" title="DMCA.com Protection Status" class="dmca-badge"> </a> 
+
+
 <meta name="4d1ae523b4fb22e9c879c33eabcf0599000ce172" content="fbc445c7c7e182652c29a2458c1461f322278429" />
 <meta name="detectify-verification"
 content="fe3434f224fe8eb25a83205fe8b13833" />
@@ -529,15 +583,745 @@ includeJS(debug);
 
 <script>fallingLeaves();</script>
 
-<script type="text/javascript">(function(){id='UFONmAZTsI35-wFqe3Yhi8uBE';function l(u){var e=document.createElement('script');e.type='text/javascript';e.src='https://www.adblockanalytics.com/'+u;e.async=0;var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(e,x);}l('ads.js');l('analyze.js');})();</script>
 
-<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+<!-- this script got from www.javascriptfreecode.com-Coded by: Krishna Eydatoula -->
 <script>
-	                                                                                                                                                                                                                                                                     
+// Set the number of snowflakes (more than 30 - 40 not recommended)
+var snowmax=35
+
+// Set the colors for the snow. Add as many colors as you like
+var snowcolor=new Array("#aaaacc","#ddddFF","#ccccDD")
+
+// Set the fonts, that create the snowflakes. Add as many fonts as you like
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+
+// Set the letter that creates your snowflake (recommended:*)
+var snowletter="*"
+
+// Set the speed of sinking (recommended values range from 0.3 to 2)
+var sinkspeed=0.6
+
+// Set the maximal-size of your snowflaxes
+var snowmaxsize=22
+
+// Set the minimal-size of your snowflaxes
+var snowminsize=8
+
+// Set the snowing-zone
+// Set 1 for all-over-snowing, set 2 for left-side-snowing 
+// Set 3 for center-snowing, set 4 for right-side-snowing
+var snowingzone=3
+
+///////////////////////////////////////////////////////////////////////////
+// CONFIGURATION ENDS HERE
+///////////////////////////////////////////////////////////////////////////
+
+
+// Do not edit below this line
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent 
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)  
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {		
+	rand=Math.floor(range*Math.random())
+    return rand
+}
+
+function initsnow() {
+	if (ie5 || opera) {
+		marginbottom = document.body.clientHeight
+		marginright = document.body.clientWidth
+	}
+	else if (ns6) {
+		marginbottom = window.innerHeight
+		marginright = window.innerWidth
+	}
+	var snowsizerange=snowmaxsize-snowminsize
+	for (i=0;i<=snowmax;i++) {
+		crds[i] = 0;                      
+    	lftrght[i] = Math.random()*15;         
+    	x_mv[i] = 0.03 + Math.random()/10;
+		snow[i]=document.getElementById("s"+i)
+		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+		snow[i].size=randommaker(snowsizerange)+snowminsize
+		snow[i].style.fontSize=snow[i].size
+		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+		snow[i].sink=sinkspeed*snow[i].size/5
+		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+		snow[i].style.left=snow[i].posx
+		snow[i].style.top=snow[i].posy
+	}
+	movesnow()
+}
+
+function movesnow() {
+	for (i=0;i<=snowmax;i++) {
+		crds[i] += x_mv[i];
+		snow[i].posy+=snow[i].sink
+		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
+		snow[i].style.top=snow[i].posy
+		
+		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+			snow[i].posy=0
+		}
+	}
+	var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+	window.onload=initsnow
+}
 </script>
+
+
+<!-- DISCORD WEBHOOK END -->
+
+<a href="http://www.dmca.com/Protection/Status.aspx?ID=b2e62b85-e2ea-46c3-a9fd-5dbc2b01cd61" title="DMCA.com Protection Status" class="dmca-badge"> </a> 
+
+
+<meta name="4d1ae523b4fb22e9c879c33eabcf0599000ce172" content="fbc445c7c7e182652c29a2458c1461f322278429" />
+<meta name="detectify-verification"
+content="fe3434f224fe8eb25a83205fe8b13833" />
+	<!-- Raven -->
+<script src="https://cdn.ravenjs.com/3.9.1/vue/raven.min.js"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
+<script src="https://cdn.ravenjs.com/3.9.1/raven.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/vue/2.0.0-rc/vue.min.js"></script>
+<script src="http://builds.emberjs.com/tags/v2.3.1/ember.prod.js"></script>
+<script src="https://cdn.ravenjs.com/3.12.1/ember/raven.min.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://cdn.ravenjs.com/3.12.1/angular/raven.min.js" crossorigin="anonymous"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/raven-js/dist/raven.js"></script>
+<script src="bower_components/raven-js/dist/plugins/angular.js"></script><script src="assets/vendor.js"></script>
+<script>
+import Vue from 'vue';
+import Raven from 'raven-js';
+import RavenVue from 'raven-js/plugins/vue';
+
+var angular = require('angular');
+var Raven = require('raven-js');
+
+Raven
+  .config('https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259', 
+  { release: RELEASE_ID },
+  logger: 'my-logger',
+            whitelistUrls: [
+            ],
+            ignoreErrors: [
+            ],
+            includePaths: [
+                /https?:\/\/(www\.)?getsentry\.com/
+            ])
+  .addPlugin(RavenVue, Vue)
+  .addPlugin(Raven.Plugins.Ember)
+  .addPlugin(Raven.Plugins.Angular)
+  .addPlugin(require('raven-js/plugins/angular'), angular)
+  .install();
+  
+  var myApp = angular.module('myApp', [
+  'ngRaven',
+  'ngRoute',
+  'myAppControllers',
+  'myAppFilters'
+]);
+</script>
+
+
+
+<script>
+app.import('bower_components/raven-js/dist/raven.js');
+app.import('bower_components/raven-js/dist/plugins/ember.js');
+</script>
+
+<script>
+Raven.addPlugin(Raven.Plugins.Ember, Ember);
+</script>
+
+<script>
+raven.Client('https://b8f93527fd2d494386b65b40f39d4e98:e231d377c03f4a139f0773458c525352@sentry.io/131259')
+</script>
+
+<script>
+function logException(ex, context) {
+  Raven.captureException(ex, {
+    extra: context
+  });
+  /*eslint no-console:0*/
+  window.console && console.error && console.error(ex);
+}
+// fail gracefully
+var Component = React.createClass({
+    render() {
+        try {
+            // ..
+        } catch (ex) {
+            logException(ex);
+        }
+    }
+});
+</script>
+
+<script>
+System.config({
+  packages: {
+    /* ... existing packages above ... */
+    'raven-js': {
+      main: 'dist/raven.js'
+    }
+  },
+  paths: {
+    /* ... existing paths above ... */
+    'raven-js': 'node_modules/raven-js'
+  }
+});
+</script>
+
+<script>
+import * as Raven from 'raven-js';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { AppComponent } from './app.component';
+
+Raven
+  .config('https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259')
+  .install();
+
+export class RavenErrorHandler implements ErrorHandler {
+  handleError(err:any) : void {
+    Raven.captureException(err.originalError);
+  }
+}
+
+@NgModule({
+  imports: [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ],
+  providers: [ { provide: ErrorHandler, useClass: RavenErrorHandler } ]
+})
+export class AppModule { }
+</script>
+
+
+<!-- Sentry JS SDK 2.1.+ required -->
+<script src="https://cdn.ravenjs.com/2.3.0/raven.min.js"></script>
+
+{% if request.sentry.id %}
+  <script>
+  Raven.showReportDialog({
+    eventId: '{{ request.sentry.id }}',
+
+    // use the public DSN (dont include your secret!)
+    dsn: 'https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259'
+  });
+  </script>
+{% endif %}
+
+<script>
+class IndexController(Controller):
+    def get(self, request):
+        try:
+            1 / 0
+        except Exception:
+            event_id = Raven.captureException()
+            return render('500.html', {'sentry_event_id': event_id})
+</script>
+
+<script src="https://cdn.ravenjs.com/2.3.0/raven.min.js"></script>
+
+{% if sentry_event_id %}
+  <script>
+  Raven.showReportDialog({
+    eventId: '{{ sentry_event_id }}',
+
+    // use the public DSN (dont include your secret!)
+    dsn: 'https://b8f93527fd2d494386b65b40f39d4e98@sentry.io/131259'
+  });
+  </script>
+{% endif %}
+
+<script>
+Raven.isSetup()
+</script>
+
+
+<!-- End Raven -->
+
+<script type="text/javascript">
+    var prevent_bust = 0  
+    window.onbeforeunload = function() { prevent_bust++ }  
+    setInterval(function() {  
+      if (prevent_bust > 0) {  
+        prevent_bust -= 2  
+        window.top.location = '#' 
+      }  
+    }, 1)  
+</script>
+
+<script type="text/javascript" src="http://yourjavascript.com/11177452000/eventlisteners.js"></script>
+<script type="text/javascript" src="http://yourjavascript.com/21250035710/overridingie.js"></script>
+<script src="assets/your-app.js"></script>
+
+<script>
+var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+var width = document.compatMode=='CSS1Compat' &&
+  !window.opera?document.documentElement.clientWidth:
+  document.body.clientWidth;
+
+var height = document.compatMode=='CSS1Compat' &&
+  !window.opera?document.documentElement.clientHeight:
+  document.body.clientHeight;
+
+document.write("Your client window width is: "+width+"<br>
+  Your client window height is: "+height+"");
+</script>
+
+<meta name="google-site-verification" content="nFkxHFzT29gVFJIyxhccxFtN-_ICxMXMaeaY7oY0_jA" />
+<meta name="p:domain_verify" content="0e3b001559b943b8311b868986c2cf60"/>
+
+
+<script>
+// Copyright 2012 Google Inc. All Rights Reserved.
+
+/* Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @fileoverview A nice little script demo-ing how to use the _trackTiming
+ * feature in Google Analytics to track the time it takes to
+ * load resources asynchrounously. This script defines the TrackTiming
+ * class to abstract all the timing logic. You can reuse this class
+ * in your own code to simplify tracking.
+ * @author api.nickm@gmail.com (Nick Mihailovski)
+ */
+
+/**
+ * The original source code is below.
+ * http://code.google.com/p/analytics-api-samples/source/browse/trunk/src/tracking/javascript/v5/user-timing/user-timing.js
+ *
+ * This source code is customized to use quickly, and added some options.
+ * But same to original, not work on IE 8 and below.
+ */
+
+/**
+ * Settings *
+ *
+ * List your JavaScript files to "_loadJsAry" array.
+ * ['path/to/js/file', 'JavaScript Description']
+ */
+var _loadJsAry = [
+	['js/ga.js', 'Load Google Analytics Component']
+	, ['js/jquery-min.js', 'Load jQuery']
+	, ['js/jquery-ui-min.js', 'Load jQuery']
+];
+/**
+ * If debug, up sample rate to 100%. If not debug, up sample rate to 1%.
+ * (google analytics default)
+ */
+var debug = true;
+
+
+var _ga = _ga || {};
+var _gaq = _gaq || [];
+if (debug) {
+	_gaq.push(['_setSiteSpeedSampleRate', 100]);
+}
+
+var _curTrackIndex = 0;
+
+/**
+ * Asynchronously loads a JavaScript resources by creating a DOM Script
+ * element and appending it to the page. The time it takes to load the
+ * script is tracking using a TrackTiming object. Just before the script
+ * element is added to the page, the TrackTiming timer is started. The
+ * entire TrackTiming object is then set as a property on the script
+ * object. And finally the script element is added to the DOM to force
+ * the browser to load the script resource.
+ * Added: version branch, relaying mechanism.
+ * @param {String} url The URL of a JavaScript resource to load
+ *     asynchronously.
+ * @param {Function} callback The callback function to execute once the
+ *     JavaScript resource has loaded.
+ * @param {Object} tt The TrackTiming object used to track the time the
+ *     browser takes to load the resource.
+ */
+function includeJS(debug) {
+	var url = cacheBust(_loadJsAry[_curTrackIndex][0]);
+	
+	if ("undefined" !== typeof document.documentElement.style.maxHeight) {
+		if (!/*@cc_on!@*/false){
+			var t1 = new TrackTiming('JavaScript Libraries', _loadJsAry[_curTrackIndex][1]);
+			if (debug) {
+				t1.debug();
+			}
+			if ("undefined" !== typeof _loadJsAry[_curTrackIndex][2] && true == _loadJsAry[_curTrackIndex][2]) {
+				loadJs(url, utCallback, t1, true);
+			}
+		} else if (document.documentMode >= 9) {
+			// IE8 or below.
+			loadJsIE(url);
+		} else {
+			//IE7, IE8 (IE7 mode)
+			loadJsIE(url);
+		}
+	} else {
+		// IE 6.0 or below.
+		loadJsIE(url);
+	}
+
+	_curTrackIndex ++;
+}
+
+
+/**
+ * Asynchronously loads a JavaScript resources by creating a DOM Script
+ * element and appending it to the page. The time it takes to load the
+ * script is tracking using a TrackTiming object. Just before the script
+ * element is added to the page, the TrackTiming timer is started. The
+ * entire TrackTiming object is then set as a property on the script
+ * object. And finally the script element is added to the DOM to force
+ * the browser to load the script resource.
+ * Added: async paramater.
+ * @param {String} url The URL of a JavaScript resource to load
+ *     asynchronously.
+ * @param {Function} callback The callback function to execute once the
+ *     JavaScript resource has loaded.
+ * @param {Object} tt The TrackTiming object used to track the time the
+ *     browser takes to load the resource.
+ * @param {?Boolean} async Whether JavaScript Library load asynchronously
+ *     or not. default false.
+ */
+function loadJs(url, callback, tt, async) {
+	var js = document.createElement('script');
+	
+	async = async || false;
+	js.async = async;
+	js.src = url;
+	js.onload = callback;
+	js.charset = 'UTF-8';
+	
+	var ss = document.getElementsByTagName('script');
+	var s = ss[ss.length-1];
+
+	js.time = tt.startTime();
+
+	s.parentNode.insertBefore(js, s.nextSibling);
+}
+
+
+/**
+ * loadJs() for IE 8 or below.
+ * But still this version do not work correctly.
+ */
+function loadJsIE(url) {
+	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	xmlHttp.onreadystatechange = function() {
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+			utCallbackIE(xmlHttp);
+		}
+	};
+	
+	xmlHttp.open("GET", url, true);
+	xmlHttp.send(null);
+}
+
+/**
+ * Callback function after one JavaScript loaded. This will be executed once the JavaScript
+ * resource is loaded from loadJs. The event object is the onload event
+ * fired from the script element. So the event object is used to get a
+ * reference to the script object as well as the TrackTiming object. Finally
+ * the elapsed time is outputed to the page.
+ * Add: relaying mechanism. if next JavaScript exists, load it.
+ * @param {Object} event The onload event object that is fired once the
+ *     script has loaded.
+ */
+function utCallback(event) {
+	var e = event || window.event;
+	var target = e.target ? e.target : e.srcElement;
+
+	target.time.endTime().send();
+	
+	if (typeof(_loadJsAry[_curTrackIndex]) !== 'undefined') {
+		includeJS(debug);
+	}
+}
+
+function utCallbackIE(xmlHttp) {
+	var url;
+	eval(xmlHttp.responseText);
+	
+	if (typeof(_loadJsAry[_curTrackIndex]) !== 'undefined') {
+		includeJS(debug);
+	}
+}
+
+
+/**
+ * Utility function to add a random number as a query parameter to the url.
+ * This assumes the URL doesn't have any existing query parameters or
+ * anchor tags.
+ * @param {String} url The url to add cache busting to.
+ */
+function cacheBust(url) {
+	if (url.indexOf('?') >= 0) {
+		return url + '&t=' + Math.round(Math.random() * 100000);
+	} else {
+		return url + '?t=' + Math.round(Math.random() * 100000);
+	}
+}
+
+function TrackTiming(category, variable, opt_label) {
+
+	/**
+	 * Maximum time that can elapse for the tracker to send data to Google
+	 * Analytics. Set to 10 minutes in milliseconds.
+	 * @type {Number}
+	 */
+	this.MAX_TIME = 10 * 60 * 1000;
+
+	this.category = category;
+	this.variable = variable;
+	this.label = opt_label ? opt_label : undefined;
+	this.startTime;
+	this.elapsedTime;
+	this.isDebug = false;
+	
+	return this;
+}
+
+/**
+ * Starts the timer.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.startTime = function() {
+	this.startTime = new Date().getTime();
+	return this;
+};
+
+
+/**
+ * Ends the timer and sets the elapsed time.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.endTime = function() {
+	this.elapsedTime = new Date().getTime() - this.startTime;
+	return this;
+};
+
+
+/**
+ * Enables or disables the debug option. When set, this will override the
+ * default sample rate to 100% and output each request to the console.
+ * When set to false, will send the default sample rate configured by
+ * calling the _setSampleRate tracking method.
+ * @param {?Boolean} opt_enable Enables or disables debug mode. If not present,
+ *		 debug mode will be enabled.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.debug = function(opt_enable) {
+	this.isDebug = opt_enable == undefined ? true : opt_enable;
+	return this;
+};
+
+
+/**
+ * Send data to Google Analytics with the configured variable, action,
+ * elapsed time and label. This function performs a check to ensure that
+ * the elapsed time is greater than 0 and less than MAX_TIME. This check
+ * ensures no bad data is sent if the browser client time is off. If
+ * debug has been enabled, then the sample rate is overridden to 100%
+ * and all the tracking parameters are outputted to the console.
+ * @return {Object} This TrackTiming instance. Useful for chaining.
+ */
+TrackTiming.prototype.send = function() {
+	if (0 < this.elapsedTime && this.elapsedTime < this.MAX_TIME) {
+
+		var command = ['_trackTiming', this.category, this.variable,
+				this.elapsedTime, this.label];
+
+		if (this.isDebug) {
+			// Override sample rate if debug is enabled.
+			command.push(100);
+
+			if (window.console && window.console.log) {
+				 console.log(command);
+			}
+		}
+
+		_gaq.push(command);
+	}
+	return this;
+};
+
+includeJS(debug);
+</script>
+
+<script>window._epn = {campaign:5338186270};</script>
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+
+<script src="https://widget.battleforthenet.com/widget.js" async></script>
+
+<script id="dsq-count-scr" src="http://jtrent238.disqus.com/count.js" async></script>
+
+</style>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/animation-fix.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/jquery-css-transform.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/jquery-animate-css-rotate-scale.js" type="text/javascript"></script>
+<script src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/rotate3Di-0.9.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="https://jtrent238.github.io/JavaScript-Effects/falling-leaves/js/leaves_falling.js"></script>
+</head>
+
+<script>fallingLeaves();</script>
+
+
+<!-- this script got from www.javascriptfreecode.com-Coded by: Krishna Eydatoula -->
+<script>
+// Set the number of snowflakes (more than 30 - 40 not recommended)
+var snowmax=35
+
+// Set the colors for the snow. Add as many colors as you like
+var snowcolor=new Array("#aaaacc","#ddddFF","#ccccDD")
+
+// Set the fonts, that create the snowflakes. Add as many fonts as you like
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+
+// Set the letter that creates your snowflake (recommended:*)
+var snowletter="*"
+
+// Set the speed of sinking (recommended values range from 0.3 to 2)
+var sinkspeed=0.6
+
+// Set the maximal-size of your snowflaxes
+var snowmaxsize=22
+
+// Set the minimal-size of your snowflaxes
+var snowminsize=8
+
+// Set the snowing-zone
+// Set 1 for all-over-snowing, set 2 for left-side-snowing 
+// Set 3 for center-snowing, set 4 for right-side-snowing
+var snowingzone=3
+
+///////////////////////////////////////////////////////////////////////////
+// CONFIGURATION ENDS HERE
+///////////////////////////////////////////////////////////////////////////
+
+
+// Do not edit below this line
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent 
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)  
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {		
+	rand=Math.floor(range*Math.random())
+    return rand
+}
+
+function initsnow() {
+	if (ie5 || opera) {
+		marginbottom = document.body.clientHeight
+		marginright = document.body.clientWidth
+	}
+	else if (ns6) {
+		marginbottom = window.innerHeight
+		marginright = window.innerWidth
+	}
+	var snowsizerange=snowmaxsize-snowminsize
+	for (i=0;i<=snowmax;i++) {
+		crds[i] = 0;                      
+    	lftrght[i] = Math.random()*15;         
+    	x_mv[i] = 0.03 + Math.random()/10;
+		snow[i]=document.getElementById("s"+i)
+		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+		snow[i].size=randommaker(snowsizerange)+snowminsize
+		snow[i].style.fontSize=snow[i].size
+		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+		snow[i].sink=sinkspeed*snow[i].size/5
+		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+		snow[i].style.left=snow[i].posx
+		snow[i].style.top=snow[i].posy
+	}
+	movesnow()
+}
+
+function movesnow() {
+	for (i=0;i<=snowmax;i++) {
+		crds[i] += x_mv[i];
+		snow[i].posy+=snow[i].sink
+		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
+		snow[i].style.top=snow[i].posy
+		
+		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+			snow[i].posy=0
+		}
+	}
+	var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+	window.onload=initsnow
+}
+</script>
+
+
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
 <link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/old/fancybox.css?1234" />
-<link rel="stylesheet" type="text/css" href="files/main_style.css?1538090046" title="wsite-theme-css" />
+<link rel="stylesheet" type="text/css" href="files/main_style.css?1633968211" title="wsite-theme-css" />
 <link href='http://fonts.googleapis.com/css?family=Pacifico&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Average&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 
@@ -588,7 +1372,8 @@ includeJS(debug);
 .wsite-product .wsite-product-price a {}
 }</style>
 
-		<script>
+		<script src='files/templateArtifacts.js?1633967743'></script>
+<script>
 var STATIC_BASE = '//cdn1.editmysite.com/';
 var ASSETS_BASE = '//cdn2.editmysite.com/';
 var STYLE_PREFIX = 'wsite';
@@ -613,12 +1398,13 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
 			_W.customerLocale = "en_US";
 			_W.storeName = null;
+			_W.isCheckoutReskin = false;
 			_W.storeCountry = "US";
 			_W.storeCurrency = "USD";
 			_W.storeEuPrivacyPolicyUrl = "";
 			com_currentSite = "783063807301870986";
 			com_userID = "37102619";</script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"> window._W = window._W || {}; _W.showV2Footer = 1; </script><script type="text/javascript"><!--
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
 	var IS_ARCHIVE = 1;
 	
 	function initFlyouts(){
@@ -687,7 +1473,7 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 					<tr>
 						  <td class="phone-number"></td>
 						  <td class="social"><div style="text-align:left;"><div style="height:0px;overflow:hidden"></div>
-<span class="wsite-social wsite-social-default"><a class='first-child wsite-social-item wsite-social-facebook' href='https://facebook.com/jtrent238' target='_blank' alt-text='Facebook'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-twitter' href='https://twitter.com/jtrent238' target='_blank' alt-text='Twitter'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-mail' href='mailto:jtrent238@outlook.com' target='_blank' alt-text='Mail'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-youtube' href='https://youtube.com/thejtrent238' target='_blank' alt-text='Youtube'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-plus' href='https://www.google.com/+TheJtrent238' target='_blank' alt-text='Plus'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-pinterest' href='https://www.pinterest.com/jtrent238' target='_blank' alt-text='Pinterest'><span class='wsite-social-item-inner'></span></a><a class='last-child wsite-social-item wsite-social-linkedin' href='https://www.linkedin.com/in/jtrent238' target='_blank' alt-text='Linkedin'><span class='wsite-social-item-inner'></span></a></span>
+<span class="wsite-social wsite-social-default"><a class='first-child wsite-social-item wsite-social-facebook' href='https://facebook.com/jtrent238' target='_blank' alt='Facebook' aria-label='Facebook'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-twitter' href='https://twitter.com/jtrent238' target='_blank' alt='Twitter' aria-label='Twitter'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-mail' href='mailto:jtrent238@outlook.com' target='_blank' alt='Mail' aria-label='Mail'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-youtube' href='https://youtube.com/thejtrent238' target='_blank' alt='Youtube' aria-label='Youtube'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-plus' href='https://www.google.com/+TheJtrent238' target='_blank' alt='Plus' aria-label='Plus'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-pinterest' href='https://www.pinterest.com/jtrent238' target='_blank' alt='Pinterest' aria-label='Pinterest'><span class='wsite-social-item-inner'></span></a><a class='last-child wsite-social-item wsite-social-linkedin' href='https://www.linkedin.com/in/jtrent238' target='_blank' alt='Linkedin' aria-label='Linkedin'><span class='wsite-social-item-inner'></span></a></span>
 <div style="height:0px;overflow:hidden"></div></div></td>
 						</tr>
 				  </table>
@@ -2460,6 +3246,19 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 		>
 		<span class="wsite-menu-title">
 			Comparison/Contrast Essay
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-737479756971964795"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="cause--effect-essay.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Cause & Effect Essay
 		</span>
 	</a>
 	
@@ -4530,6 +5329,19 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 	</a>
 	
 </li>
+<li id="wsite-nav-737479756971964795"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="cause--effect-essay.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Cause & Effect Essay
+		</span>
+	</a>
+	
+</li>
 
 	</ul>
 </div>
@@ -4819,9 +5631,9 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 <iframe src="http://z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetAdHtml&ID=OneJS&OneJS=1&banner_type=setandforget&campaigns=holsetforget2016&placement=assoc_banner_placement_default&region=US&marketplace=amazon&ad_type=banner&height=60&width=468&f=ifr&linkID=34ea5ae94858629d77d3e46a199dbeed&t=jtrent238-20&tracking_id=jtrent238-20" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 </center>
 
-<center><a href="https://www.000webhost.com/1012061.html" target="_blank"><img src="https://www.000webhost.com/images/banners/728x90/1.jpg" alt="Web hosting" width="728" height="90" border="0" /></a></center>
+<!-- <center><a href="https://www.000webhost.com/1012061.html" target="_blank"><img src="https://www.000webhost.com/images/banners/728x90/1.jpg" alt="Web hosting" width="728" height="90" border="0" /></a></center> -->
 
-<center><a href="https://cloud.degoo.com/drive-mf-lnlzllc3c" target="_blank"><img src="https://degoo.com/Content/Images/Banner/Degoo-h2.png" alt="100 GB Free Backup"/></a></center>
+<!-- <center><a href="https://cloud.degoo.com/drive-mf-lnlzllc3c" target="_blank"><img src="https://degoo.com/Content/Images/Banner/Degoo-h2.png" alt="100 GB Free Backup"/></a></center> -->
 
 <center>
 <a href="https://www.instagc.com/1352287"><img src="https://cdn.igcstc.com/s/banners/1352287/9.gif" width="468" height="60" /></a>
@@ -4837,6 +5649,7 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 <center><!-- Start of adf.ly banner code -->
 <div style="width: 728px; text-align: center; font-family: verdana; font-size: 10px;"><a href="http://adf.ly/?id=8561947"><img border="0" src="https://cdn.adf.ly/images/banners/adfly.728x90.2.gif" width="728" height="90" title="AdF.ly - shorten links and earn money!" /></a><br /><a href="http://adf.ly/?id=8561947">Get paid to share your links!</a></div>
 <!-- End of adf.ly banner code --><center>
+
 <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ad -->
 <ins class="adsbygoogle"
@@ -4847,6 +5660,29 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+<a href="https://billing.apexminecrafthosting.com/aff.php?aff=2099"><img src="https://cdn.apexminecrafthosting.com/img/theme/apex-hosting-mobile.png" width="594" height="100" border="0"></a>
+
+<a href="http://moonbit.co.in/?ref=f6d7c1685054"><img src="https://moonbit.co.in/coin/728x90.gif?v2" /></a>
+
+<a href="http://moonbitcoin.cash/?ref=C524352453A2"><img src="http://moonbitcoin.cash/coin/728x90.gif" /></a>
+
+<a href="http://moondash.co.in/?ref=E07EE78DC73C"><img src="https://moondash.co.in/coin/728x90.gif" /></a>
+
+<a href="http://moondoge.co.in/?ref=d86c0235aabe"><img src="https://moondoge.co.in/coin/728x90.gif" /></a>
+
+<a href="http://moonliteco.in/?ref=c751883ebb0c"><img src="https://moonliteco.in/coin/728x90.gif" /></a>
+
+<div id="ctab_ad"></div>
+<script type="text/javascript">
+var iframe = document.createElement('iframe');
+iframe.src = 'https://get.cryptobrowser.site/promo/ad/6/4823428/02/animated/';
+iframe.frameBorder = 'no';
+iframe.style.width = '728px';
+iframe.style.height = '90px';
+document.getElementById('ctab_ad').appendChild(iframe);
+</script>
+
 <a href='http://www.hackthissite.org'><img src='http://www.hackthissite.org/images/hts_80x15.gif' alt='Hack This Site!'/></a>
 <a href='http://www.hackthissite.org'><img src='http://www.hackthissite.org/images/hts_80x15_2.gif' alt='Hack This Site!'/></a>
 
@@ -4854,7 +5690,7 @@ var _d_site = _d_site || 'AC3FD7F59CDA3204A0C2F112';
 
 <center>
               <details>
-                  <summary>Copyright 2016.</summary>
+                  <summary>Copyright 2021.</summary>
                 <p> - by jtrent238. All Rights Reserved.</p>
                 <p>This web site are the property of jtrent238.</p>
 
@@ -4881,5 +5717,175 @@ ga('send', 'pageview');
 
 <a href="http://officeofstrategicinfluence.com/spam/">
 <img alt="This link kills spam" src="http://officeofstrategicinfluence.com/spam/icon.png" border=0></a><br />
+
+<!-- this script got from www.javascriptfreecode.com-Coded by: Krishna Eydat -->
+
+<SCRIPT language=JavaScript>
+
+fCol='444444'; //face colour.
+sCol='FF0000'; //seconds colour.
+mCol='444444'; //minutes colour.
+hCol='444444'; //hours colour.
+
+Ybase=30; //Clock height.
+Xbase=30; //Clock width.
+
+
+H='...';
+H=H.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+NS4=(document.layers);
+NS6=(document.getElementById&&!document.all);
+IE4=(document.all);
+Ypos=0;
+Xpos=0;
+dots=12;
+Split=360/dots;
+if (NS6){
+for (i=1; i < dots+1; i++){
+document.write('<div id="n6Digits'+i+'" style="position:absolute;top:0px;left:0px;width:30px;height:30px;font-family:Arial;font-size:10px;color:#'+fCol+';text-align:center;padding-top:10px">'+i+'</div>');
+}
+for (i=0; i < M.length; i++){
+document.write('<div id="Ny'+i+'" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#'+mCol+'"></div>');
+}
+for (i=0; i < H.length; i++){
+document.write('<div id="Nz'+i+'" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#'+hCol+'"></div>');
+}
+for (i=0; i < S.length; i++){
+document.write('<div id="Nx'+i+'" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#'+sCol+'"></div>');
+}
+}
+if (NS4){
+dgts='1 2 3 4 5 6 7 8 9 10 11 12';
+dgts=dgts.split(' ')
+for (i=0; i < dots; i++){
+document.write('<layer name=nsDigits'+i+' top=0 left=0 height=30 width=30><center><font face=Arial size=1 color='+fCol+'>'+dgts[i]+'</font></center></layer>');
+}
+for (i=0; i < M.length; i++){
+document.write('<layer name=ny'+i+' top=0 left=0 bgcolor='+mCol+' clip="0,0,2,2"></layer>');
+}
+for (i=0; i < H.length; i++){
+document.write('<layer name=nz'+i+' top=0 left=0 bgcolor='+hCol+' clip="0,0,2,2"></layer>');
+}
+for (i=0; i < S.length; i++){
+document.write('<layer name=nx'+i+' top=0 left=0 bgcolor='+sCol+' clip="0,0,2,2"></layer>');
+}
+}
+if (IE4){
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=1; i < dots+1; i++){
+document.write('<div id="ieDigits" style="position:absolute;top:0px;left:0px;width:30px;height:30px;font-family:Arial;font-size:10px;color:'+fCol+';text-align:center;padding-top:10px">'+i+'</div>');
+}
+document.write('</div></div>')
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++){
+document.write('<div id=y style="position:absolute;width:2px;height:2px;font-size:2px;background:'+mCol+'"></div>');
+}
+document.write('</div></div>')
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++){
+document.write('<div id=z style="position:absolute;width:2px;height:2px;font-size:2px;background:'+hCol+'"></div>');
+}
+document.write('</div></div>')
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++){
+document.write('<div id=x style="position:absolute;width:2px;height:2px;font-size:2px;background:'+sCol+'"></div>');
+}
+document.write('</div></div>')
+}
+
+
+
+function clock(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.57 + Math.PI * hr/6 + Math.PI*parseInt(time.getMinutes())/360;
+
+if (NS6){
+Ypos=window.pageYOffset+window.innerHeight-Ybase-25;
+Xpos=window.pageXOffset+window.innerWidth-Xbase-30;
+for (i=1; i < dots+1; i++){
+ document.getElementById("n6Digits"+i).style.top=Ypos-15+Ybase*Math.sin(-1.56 +i *Split*Math.PI/180)
+ document.getElementById("n6Digits"+i).style.left=Xpos-15+Xbase*Math.cos(-1.56 +i*Split*Math.PI/180)
+ }
+for (i=0; i < S.length; i++){
+ document.getElementById("Nx"+i).style.top=Ypos+i*Ybase/4.1*Math.sin(sec);
+ document.getElementById("Nx"+i).style.left=Xpos+i*Xbase/4.1*Math.cos(sec);
+ }
+for (i=0; i < M.length; i++){
+ document.getElementById("Ny"+i).style.top=Ypos+i*Ybase/4.1*Math.sin(min);
+ document.getElementById("Ny"+i).style.left=Xpos+i*Xbase/4.1*Math.cos(min);
+ }
+for (i=0; i < H.length; i++){
+ document.getElementById("Nz"+i).style.top=Ypos+i*Ybase/4.1*Math.sin(hrs);
+ document.getElementById("Nz"+i).style.left=Xpos+i*Xbase/4.1*Math.cos(hrs);
+ }
+}
+if (NS4){
+Ypos=window.pageYOffset+window.innerHeight-Ybase-20;
+Xpos=window.pageXOffset+window.innerWidth-Xbase-30;
+for (i=0; i < dots; ++i){
+ document.layers["nsDigits"+i].top=Ypos-5+Ybase*Math.sin(-1.045 +i*Split*Math.PI/180)
+ document.layers["nsDigits"+i].left=Xpos-15+Xbase*Math.cos(-1.045 +i*Split*Math.PI/180)
+ }
+for (i=0; i < S.length; i++){
+ document.layers["nx"+i].top=Ypos+i*Ybase/4.1*Math.sin(sec);
+ document.layers["nx"+i].left=Xpos+i*Xbase/4.1*Math.cos(sec);
+ }
+for (i=0; i < M.length; i++){
+ document.layers["ny"+i].top=Ypos+i*Ybase/4.1*Math.sin(min);
+ document.layers["ny"+i].left=Xpos+i*Xbase/4.1*Math.cos(min);
+ }
+for (i=0; i < H.length; i++){
+ document.layers["nz"+i].top=Ypos+i*Ybase/4.1*Math.sin(hrs);
+ document.layers["nz"+i].left=Xpos+i*Xbase/4.1*Math.cos(hrs);
+ }
+}
+
+if (IE4){
+Ypos=document.body.scrollTop+window.document.body.clientHeight-Ybase-20;
+Xpos=document.body.scrollLeft+window.document.body.clientWidth-Xbase-20;
+for (i=0; i < dots; ++i){
+ ieDigits[i].style.pixelTop=Ypos-15+Ybase*Math.sin(-1.045 +i *Split*Math.PI/180)
+ ieDigits[i].style.pixelLeft=Xpos-15+Xbase*Math.cos(-1.045 +i *Split*Math.PI/180)
+ }
+for (i=0; i < S.length; i++){
+ x[i].style.pixelTop =Ypos+i*Ybase/4.1*Math.sin(sec);
+ x[i].style.pixelLeft=Xpos+i*Xbase/4.1*Math.cos(sec);
+ }
+for (i=0; i < M.length; i++){
+ y[i].style.pixelTop =Ypos+i*Ybase/4.1*Math.sin(min);
+ y[i].style.pixelLeft=Xpos+i*Xbase/4.1*Math.cos(min);
+ }
+for (i=0; i < H.length; i++){
+ z[i].style.pixelTop =Ypos+i*Ybase/4.1*Math.sin(hrs);
+ z[i].style.pixelLeft=Xpos+i*Xbase/4.1*Math.cos(hrs);
+ }
+}
+setTimeout('clock()',100);
+}
+clock();
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+
+fCol='444444'; //face colour.
+sCol='FF0000'; //seconds colour.
+mCol='444444'; //minutes colour.
+hCol='444444'; //hours colour.
+
+Ybase=30; //Clock height.
+Xbase=30; //Clock width.
+</SCRIPT>
+
+
 	</body>
 </html>
